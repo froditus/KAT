@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.cylpro.app" version="1.0.0" xmlns="http://www.w3.org/ns/widgets"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:gap="http://cordova.apache.org/ns/1.0">
+    <name>CYLPro</name>
+    <description>Change Your Life Program</description>
+    <author email="admin@cyl-pro.com" href="https://apps.cyl-pro.com">CYLPro</author>
+    <icon src="icon.png" />
+    <splash src="splash.png" />
+    <config-file mode="merge" parent="/manifest/application" platform="android">
+        <uses-permission android:name="android.permission.INTERNET" />
+    </config-file>
+    <access origin="*" />
+	<allow-navigation href="https://apps.cyl-pro.com/user" />
+    <content src="index.html" />
+    <preference name="loglevel" value="DEBUG" />
+    <preference name="phonegap-version" value="cli-8.0.0" />
+    <preference name="permissions" value="none" />
+    <preference name="orientation" value="portrait" />
+    <preference name="target-device" value="universal" />
+    <preference name="fullscreen" value="false" />
+    <preference name="SplashScreenDelay" value="3000" />
+    <preference name="AutoHideSplashScreen" value="true" />
+    <preference name="SplashMaintainAspectRatio" value="true" />
+    <feature name="InAppBrowser">
+        <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
+    </feature>
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+        <param name="onload" value="true" />
+    </feature>
+	<allow-navigation href="https://apps.cyl-pro.com/user" />
+</widget>
