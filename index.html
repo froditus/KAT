@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+  <head>    
     <title>Change Your Life Program</title>
-
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8">
 
@@ -39,7 +38,7 @@
     // device APIs are available
     //
     function onDeviceReady() {
-         iabRef = window.open('https://apps.cyl-pro.com/user', '_blank', 'location=no');
+         iabRef = window.open('https://apps.cyl-pro.com/user', '_blank', 'location=no,zoom=no,toolbar=no');
          
          iabRef.addEventListener('loadstart', iabLoadStart);
          iabRef.addEventListener('loadstop', iabLoadStop);
