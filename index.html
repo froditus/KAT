@@ -36,11 +36,12 @@
     // device APIs are available
     //
     function onDeviceReady() {
-         iabRef = window.open('https://apps.cyl-pro.com/user', '_blank', 'location=yes');
-         iabRef.addEventListener('loadstart', iabLoadStart);
-         iabRef.addEventListener('loadstop', iabLoadStop);
-         iabRef.addEventListener('loaderror', iabLoadError);
-         iabRef.addEventListener('exit', iabClose);
+         iabRef = window.open('https://apps.cyl-pro.com/user', '_self', 'location=no,hidden=yes,closebuttoncaption=Done,toolbar=no');
+         
+          //iabRef.addEventListener('loadstart', iabLoadStart);
+         //iabRef.addEventListener('loadstop', iabLoadStop);
+         //iabRef.addEventListener('loaderror', iabLoadError);
+         //iabRef.addEventListener('exit', iabClose);
     }
 
     </script>
