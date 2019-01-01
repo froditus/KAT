@@ -8,10 +8,15 @@
  <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
  <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' gap:; style-src 'self' 'unsafe-inline'; media-src *" />
 </head>
-<body></body>
-<script type="text/javascript" src="cordova.js"></script>
-<script type="text/javascript">
-	alert('hello');
-	var onInApp = window.open('https://apps.cylpro.com/user', '_system', 'location=no,hidden=yes,closebuttoncaption=Done,toolbar=no');
-</script>
+<body>
+	<div class="app">
+            <h1>Apache Cordova</h1>
+            <div id="deviceready" class="blink">
+                <p class="event listening">Connecting to Device</p>
+                <p class="event received">Device is Ready</p>
+            </div>
+        </div>
+	 <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>	
+</body>
 </html>
