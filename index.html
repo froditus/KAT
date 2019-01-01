@@ -8,7 +8,7 @@
 
     // Wait for device API libraries to load
     //
-	navigator.splashscreen.show();
+    //navigator.splashscreen.show();
     document.addEventListener("deviceready", onDeviceReady, false);
 
     // Global InAppBrowser reference
@@ -59,7 +59,7 @@
          iabRef.addEventListener('loaderror', iabLoadError);
          iabRef.addEventListener('exit', iabClose);
 		 
-		 navigator.splashscreen.hide();
+         //navigator.splashscreen.hide();
     }
 
     </script>
