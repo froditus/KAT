@@ -1,6 +1,7 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <title>InAppBrowser.addEventListener Example</title>
+    <title>InAppBrowser.removeEventListener Example</title>
 
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8">
@@ -9,15 +10,37 @@
     //
     document.addEventListener("deviceready", onDeviceReady, false);
 
+    // Global InAppBrowser reference
+    var iabRef = null;
+
+    function iabLoadStart(event) {
+        alert(event.type + ' - ' + event.url);
+    }
+
+    function iabLoadStop(event) {
+        alert(event.type + ' - ' + event.url);
+    }
+
+    function iabLoadError(event) {
+        alert(event.type + ' - ' + event.message);
+    }
+
+    function iabClose(event) {
+         alert(event.type);
+         iabRef.removeEventListener('loadstart', iabLoadStart);
+         iabRef.removeEventListener('loadstop', iabLoadStop);
+         iabRef.removeEventListener('loaderror', iabLoadError);
+         iabRef.removeEventListener('exit', iabClose);
+    }
+
     // device APIs are available
     //
     function onDeviceReady() {
-         var ref = window.open('https://apps.cyl-pro.com/user/', '_blank', 'location=yes');
-         ref.addEventListener('loadstart', function(event) { alert('start: ' + event.url); });
-         ref.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); });
-         ref.addEventListener('loaderror', function(event) { alert('error: ' + event.message); });
-         ref.addEventListener('exit', function(event) { alert(event.type); });
-         alert('hello');
+         iabRef = window.open('https://apps.cyl-pro.com/user', '_blank', 'location=yes');
+         iabRef.addEventListener('loadstart', iabLoadStart);
+         iabRef.addEventListener('loadstop', iabLoadStop);
+         iabRef.addEventListener('loaderror', iabLoadError);
+         iabRef.addEventListener('exit', iabClose);
     }
 
     </script>
